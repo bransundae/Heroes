@@ -169,6 +169,9 @@ export class CharacterController {
     },
   })
   async deleteById(@param.path.string('id') id: string): Promise<void> {
+    await this.characterRepository.weapon(id).delete();
+    await this.characterRepository.armor(id).delete();
+    await this.characterRepository.skill(id).delete();
     await this.characterRepository.deleteById(id);
   }
 }

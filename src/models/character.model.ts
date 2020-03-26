@@ -24,6 +24,24 @@ export class Character extends Entity {
   })
   level?: number;
 
+  @property({
+    type: 'number',
+    default: 1,
+  })
+  attack?: number;
+
+  @property({
+    type: 'number',
+    default: 1,
+  })
+  defence?: number;
+
+  @property({
+    type: 'number',
+    default: 1,
+  })
+  health?: number;
+
   @hasOne(() => Armor)
   armor?: Armor;
 
